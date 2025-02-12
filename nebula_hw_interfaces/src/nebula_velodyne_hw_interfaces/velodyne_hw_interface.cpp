@@ -26,8 +26,9 @@ std::string VelodyneHwInterface::http_get_request(const std::string & endpoint)
     http_client_driver_->client()->close();
     return response;
   } catch (const std::exception & ex) {
-    VelodyneStatus status = Status::HTTP_CONNECTION_ERROR;
-    return status;
+    return "Http Connection Error";
+    // VelodyneStatus status = Status::HTTP_CONNECTION_ERROR;
+    // return status;
   }
 }
 
@@ -44,8 +45,9 @@ std::string VelodyneHwInterface::http_post_request(
     http_client_driver_->client()->close();
     return response;
   } catch (const std::exception & ex) {
-    VelodyneStatus status = Status::HTTP_CONNECTION_ERROR;
-    return status;
+    return "Http Connection Error";
+    // VelodyneStatus status = Status::HTTP_CONNECTION_ERROR;
+    // return status;
   }
 }
 

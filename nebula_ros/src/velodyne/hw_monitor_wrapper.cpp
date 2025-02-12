@@ -194,6 +194,10 @@ void VelodyneHwMonitorWrapper::on_velodyne_snapshot_timer()
   auto str = hw_interface_->get_snapshot();
   auto ptree = hw_interface_->parse_json(str);
 
+  if(ptree.empty()){
+    std::cerr<< "snapshot ptree is empty" << std::endl;
+  }
+  else
   {
     std::lock_guard lock(mtx_snapshot_);
 
